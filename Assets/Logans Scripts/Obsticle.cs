@@ -12,8 +12,8 @@ public class Obsticle : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        pointA = transform.position = new Vector3(7, 0.5f, -12);
-        pointB = transform.position = new Vector3(7, 0.5f, 12);
+        pointA = transform.position = new Vector3(6.75f, 0.5f, -12);
+        pointB = transform.position = new Vector3(6.75f, 0.5f, 12);
     }
 
     // Update is called once per frame

@@ -5,15 +5,17 @@ using UnityEngine;
 public class CatcherScript : MonoBehaviour
 {
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public Rigidbody otherRb;
+    
 
-    private void OnTriggerEnter(Collider collision)
+    private void OnTriggerEnter(Collider other)
     {
-        transform.position = new Vector3(0, 0.5f, 0);
+        if(other.gameObject.CompareTag("Player"))
+        {
+            other.gameObject.transform.position = new Vector3(0, 0, 0);
+            otherRb.isKinematic = true;
+            otherRb.isKinematic = false;
+        }
     }
 
 }
