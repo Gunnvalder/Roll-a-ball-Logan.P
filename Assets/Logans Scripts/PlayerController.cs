@@ -56,6 +56,7 @@ public class PlayerController : MonoBehaviour
             count = count + 1;
 
             SetCountText();
+            transform.localScale *= 1.1f;
         }
     }
 
