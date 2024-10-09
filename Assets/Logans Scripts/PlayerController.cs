@@ -77,7 +77,7 @@ public class PlayerController : MonoBehaviour
     {
         countText.text = "Count: " + count.ToString();
 
-        if (count >= 13)
+        if (count >= 16)
         {
             winTextObject.SetActive(true);
             RestartButtonObject.SetActive(true);
