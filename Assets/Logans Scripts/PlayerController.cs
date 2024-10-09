@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
     public TextMeshProUGUI countText;
 
     public GameObject winTextObject;
+    public GameObject RestartButtonObject;
 
     void Start()
     {
@@ -29,6 +30,7 @@ public class PlayerController : MonoBehaviour
         SetCountText();
 
         winTextObject.SetActive(false);
+        RestartButtonObject.SetActive(false);
     }
 
     void OnMove(InputValue movementValue)
@@ -57,6 +59,17 @@ public class PlayerController : MonoBehaviour
 
             SetCountText();
             transform.localScale *= 1.1f;
+            
+        }
+        if (other.gameObject.CompareTag("DoorButton"))
+        {
+            GameObject door = GameObject.FindWithTag("Door1");
+            door.SetActive(false);
+        }
+        if (other.gameObject.CompareTag("DoorButton2"))
+        {
+            GameObject door = GameObject.FindWithTag("Door2");
+            door.SetActive(false);
         }
     }
 
@@ -64,9 +77,10 @@ public class PlayerController : MonoBehaviour
     {
         countText.text = "Count: " + count.ToString();
 
-        if (count >= 12)
+        if (count >= 13)
         {
             winTextObject.SetActive(true);
+            RestartButtonObject.SetActive(true);
         }
     }
 }

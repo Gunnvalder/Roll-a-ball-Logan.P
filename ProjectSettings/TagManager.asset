@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - PickUp
+  - DoorButton
+  - Door1
+  - DoorButton2
+  - Door2
   layers:
   - Default
   - TransparentFX
