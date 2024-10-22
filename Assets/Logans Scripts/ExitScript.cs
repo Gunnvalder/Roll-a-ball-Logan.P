@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class ExitScript : MonoBehaviour
 {
-    void OnClick()
+    public void OnClick()
     {
         Application.Quit();
     }
