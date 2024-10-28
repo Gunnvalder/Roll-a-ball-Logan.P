@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using TMPro;
 using System.Xml.Linq;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -18,6 +19,8 @@ public class PlayerController : MonoBehaviour
     public float speed = 0;
 
     public TextMeshProUGUI countText;
+    public TextMeshProUGUI RightOpenMessage;
+    public TextMeshProUGUI LeftOpenMessage;
 
     public GameObject winTextObject;
     public GameObject RestartButtonObject;
@@ -32,6 +35,10 @@ public class PlayerController : MonoBehaviour
 
         winTextObject.SetActive(false);
         RestartButtonObject.SetActive(false);
+        RightMessageDisabled();
+        LeftMessageDisabled();
+        RightMessageEnabled();
+        LeftMessageEnabled();
     }
 
     void OnMove(InputValue movementValue)
@@ -66,12 +73,36 @@ public class PlayerController : MonoBehaviour
         {
             GameObject door = GameObject.FindWithTag("Door1");
             door.SetActive(false);
+            RightMessageEnabled();
+            Invoke("RightMessageEnabled", 0.5f);
         }
         if (other.gameObject.CompareTag("DoorButton2"))
         {
             GameObject door = GameObject.FindWithTag("Door2");
             door.SetActive(false);
+            LeftMessageEnabled();
+            Invoke("LeftMessageEnabled", 0.5f);
         }
+    }
+
+    void RightMessageEnabled()
+    {
+        RightOpenMessage.enabled = true;
+    }
+
+    void LeftMessageEnabled()
+    {
+        LeftOpenMessage.enabled = true;
+    }
+
+    void RightMessageDisabled()
+    {
+        RightOpenMessage.enabled = false;
+    }
+
+    void LeftMessageDisabled()
+    {
+        LeftOpenMessage.enabled = false;
     }
 
     void SetCountText()
