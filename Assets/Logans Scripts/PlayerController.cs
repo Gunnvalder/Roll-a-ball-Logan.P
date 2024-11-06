@@ -43,6 +43,7 @@ public class PlayerController : MonoBehaviour
 
         SetCountText();
 
+        //setting all the text off so its not seen at the start 
         winTextObject.SetActive(false);
         RestartButtonObject.SetActive(false);
         RightOpen.gameObject.SetActive(false);
@@ -55,7 +56,6 @@ public class PlayerController : MonoBehaviour
         {
             //decrement the timer (countdown)
             waitForRightDoor -= Time.deltaTime;
-            //Debug.Log(waitForRightDoor);
         }
         //otherwise, if the timer is at or below 0
         else if (waitForRightDoor <= 0)
@@ -117,6 +117,13 @@ public class PlayerController : MonoBehaviour
             leftDoorActivated = true;
             LeftOpen.gameObject.SetActive(true);
         }
+        if (other.gameObject.CompareTag("ResetScaleButton"))
+        {
+            GameObject ResetScale = GameObject.FindWithTag("ResetScaleButton");
+            transform.localScale /= 1.5f;
+            ResetScale.gameObject.SetActive(false);
+        }
+        
     }
 
 
@@ -124,7 +131,8 @@ public class PlayerController : MonoBehaviour
     {
         countText.text = "Count: " + count.ToString();
 
-        if (count >= 16)
+        //when count is over 20 the game will end
+        if (count >= 20)
         {
             winTextObject.SetActive(true);
             RestartButtonObject.SetActive(true);

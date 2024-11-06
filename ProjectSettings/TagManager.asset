@@ -9,6 +9,7 @@ TagManager:
   - Door1
   - DoorButton2
   - Door2
+  - ResetScaleButton
   layers:
   - Default
   - TransparentFX
