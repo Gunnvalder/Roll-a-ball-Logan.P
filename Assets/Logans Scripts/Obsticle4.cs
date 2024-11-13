@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Obsticle2 : MonoBehaviour
+public class Obsticle4 : MonoBehaviour
 {
 
     public float speed = 1;
@@ -12,8 +12,8 @@ public class Obsticle2 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        pointA = transform.position = new Vector3(-7, 1, 12);
-        pointB = transform.position = new Vector3(-7, 1, -12);
+        pointA = transform.position = new Vector3(-18, 0, 62);
+        pointB = transform.position = new Vector3(17, 0, 62);
     }
 
     // Update is called once per frame
