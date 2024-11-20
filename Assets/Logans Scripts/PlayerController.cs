@@ -34,6 +34,9 @@ public class PlayerController : MonoBehaviour
     float waitForLeftDoor = 5;
     bool leftDoorActivated = false;
 
+    public float TimePassed = 0f;
+    private bool TimerRunning = false;
+
 
 
 
@@ -44,7 +47,8 @@ public class PlayerController : MonoBehaviour
         count = 0;
 
         SetCountText();
-        SetTimer();
+
+        TimerRunning = true;
 
         //setting all the text off so its not seen at the start 
         winTextObject.SetActive(false);
@@ -76,6 +80,33 @@ public class PlayerController : MonoBehaviour
             LeftOpen.gameObject.SetActive(false);
         }
         
+        if (TimerRunning == true)
+        {
+            TimePassed += Time.deltaTime;
+
+            UpdateTimer();
+        }
+
+    }
+
+    void UpdateTimer()
+    {
+        if (TimerText != null)
+        {
+            int min = Mathf.FloorToInt(TimePassed / 60);
+            int sec = Mathf.FloorToInt(TimePassed % 60);
+            TimerText.text = string.Format("{0:00}:{1:00}", min, sec);
+        }
+        
+    }
+
+    void StopTimer()
+    {
+        if (winTextObject == true)
+        {
+            
+            TimerRunning = false;
+        }
     }
 
     void OnMove(InputValue movementValue)
@@ -139,12 +170,7 @@ public class PlayerController : MonoBehaviour
         {
             winTextObject.SetActive(true);
             RestartButtonObject.SetActive(true);
+            StopTimer();
         }
     }
-
-    void SetTimer()
-    {
-        TimerText.text = "0:00 ";
-    }
-    
 }
