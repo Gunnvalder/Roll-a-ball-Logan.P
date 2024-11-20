@@ -24,6 +24,7 @@ public class PlayerController : MonoBehaviour
     public TextMeshProUGUI countText;
     public TextMeshProUGUI RightOpen;
     public TextMeshProUGUI LeftOpen;
+    public TextMeshProUGUI TimerText;
 
     public GameObject winTextObject;
     public GameObject RestartButtonObject;
@@ -35,6 +36,7 @@ public class PlayerController : MonoBehaviour
 
 
 
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -42,6 +44,7 @@ public class PlayerController : MonoBehaviour
         count = 0;
 
         SetCountText();
+        SetTimer();
 
         //setting all the text off so its not seen at the start 
         winTextObject.SetActive(false);
@@ -138,4 +141,10 @@ public class PlayerController : MonoBehaviour
             RestartButtonObject.SetActive(true);
         }
     }
+
+    void SetTimer()
+    {
+        TimerText.text = "0:00 ";
+    }
+    
 }
