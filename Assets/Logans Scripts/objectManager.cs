@@ -18,7 +18,7 @@ public class objectManager : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {      
         
         float time = Mathf.PingPong(Time.time * speed, 1f);
