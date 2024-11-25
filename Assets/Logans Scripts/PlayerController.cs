@@ -25,14 +25,18 @@ public class PlayerController : MonoBehaviour
     public TextMeshProUGUI RightOpen;
     public TextMeshProUGUI LeftOpen;
     public TextMeshProUGUI TimerText;
+    public TextMeshProUGUI NextAreaText;
 
     public GameObject winTextObject;
     public GameObject RestartButtonObject;
+    public GameObject RailBrige;
 
     float waitForRightDoor = 5;
     bool rightDoorActivated = false;
     float waitForLeftDoor = 5;
     bool leftDoorActivated = false;
+    float WaitForRails = 5;
+    bool RailsActive = false;
 
     public float TimePassed = 0f;
     private bool TimerRunning = false;
@@ -55,6 +59,8 @@ public class PlayerController : MonoBehaviour
         RestartButtonObject.SetActive(false);
         RightOpen.gameObject.SetActive(false);
         LeftOpen.gameObject.SetActive(false);
+        NextAreaText.gameObject.SetActive(false);
+        RailBrige.gameObject.SetActive(false);
     }
     private void Update()
     {
@@ -78,6 +84,15 @@ public class PlayerController : MonoBehaviour
         {
             leftDoorActivated = false;
             LeftOpen.gameObject.SetActive(false);
+        }
+        if (WaitForRails > 0 && RailsActive == true)
+        {
+            WaitForRails -= Time.deltaTime;
+        }
+        else if (WaitForRails <= 0)
+        {
+            RailsActive = false;
+            NextAreaText.gameObject.SetActive(false);
         }
         
         if (TimerRunning == true)
@@ -157,7 +172,6 @@ public class PlayerController : MonoBehaviour
             transform.localScale /= 1.5f;
             ResetScale.gameObject.SetActive(false);
         }
-        
     }
 
 
@@ -171,6 +185,12 @@ public class PlayerController : MonoBehaviour
             winTextObject.SetActive(true);
             RestartButtonObject.SetActive(true);
             StopTimer();
+        }
+        if (count >= 12)
+        {
+            RailsActive = true;
+            NextAreaText.gameObject.SetActive(true);
+            RailBrige.gameObject.SetActive(true);
         }
     }
 }
