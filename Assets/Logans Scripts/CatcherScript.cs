@@ -16,6 +16,12 @@ public class CatcherScript : MonoBehaviour
             otherRb.isKinematic = true;
             otherRb.isKinematic = false;
         }
+        if (other.gameObject.CompareTag("ResetScaleButton"))
+        {
+            other.gameObject.transform.position = new Vector3(4, -11, 65);
+            otherRb.isKinematic = true;
+            otherRb.isKinematic = false;
+        }
     }
 
 }

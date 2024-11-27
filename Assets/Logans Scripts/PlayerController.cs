@@ -54,7 +54,7 @@ public class PlayerController : MonoBehaviour
 
         TimerRunning = true;
 
-        //setting all the text off so its not seen at the start 
+        //setting all the text off so its not seen at the start
         winTextObject.SetActive(false);
         RestartButtonObject.SetActive(false);
         RightOpen.gameObject.SetActive(false);
