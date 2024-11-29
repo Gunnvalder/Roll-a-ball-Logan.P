@@ -30,6 +30,8 @@ public class PlayerController : MonoBehaviour
     public GameObject winTextObject;
     public GameObject RestartButtonObject;
     public GameObject RailBrige;
+    public GameObject Catcher1;
+    public GameObject Catcher2;
 
     float waitForRightDoor = 5;
     bool rightDoorActivated = false;
@@ -61,6 +63,7 @@ public class PlayerController : MonoBehaviour
         LeftOpen.gameObject.SetActive(false);
         NextAreaText.gameObject.SetActive(false);
         RailBrige.gameObject.SetActive(false);
+        Catcher2.gameObject.SetActive(false);
     }
     private void Update()
     {
@@ -191,6 +194,8 @@ public class PlayerController : MonoBehaviour
             RailsActive = true;
             NextAreaText.gameObject.SetActive(true);
             RailBrige.gameObject.SetActive(true);
+            Catcher1.gameObject.SetActive(false);
+            Catcher2.gameObject.SetActive(true);
         }
     }
 }

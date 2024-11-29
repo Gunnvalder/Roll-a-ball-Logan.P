@@ -2221,6 +2221,73 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 220425959}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &221209950
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 221209953}
+  - component: {fileID: 221209952}
+  - component: {fileID: 221209951}
+  m_Layer: 0
+  m_Name: Catcher2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &221209951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 221209950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9a6e2beeeb446d4082b96adb983dd3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  otherRb: {fileID: 899571996}
+--- !u!65 &221209952
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 221209950}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 84.04152, y: 1, z: 73.87758}
+  m_Center: {x: -0.10411835, y: 0, z: 1.5742741}
+--- !u!4 &221209953
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 221209950}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.16841, y: -10, z: 59.7}
+  m_LocalScale: {x: 2.6175, y: 2.6175, z: 2.6175}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &235058269
 GameObject:
   m_ObjectHideFlags: 0
@@ -6971,6 +7038,8 @@ MonoBehaviour:
   winTextObject: {fileID: 327653596}
   RestartButtonObject: {fileID: 1052520993}
   RailBrige: {fileID: 364456386}
+  Catcher1: {fileID: 1061149468}
+  Catcher2: {fileID: 221209950}
   TimePassed: 0
 --- !u!114 &899572002
 MonoBehaviour:
@@ -13992,6 +14061,7 @@ SceneRoots:
   - {fileID: 260202669}
   - {fileID: 1741158671}
   - {fileID: 1061149470}
+  - {fileID: 221209953}
   - {fileID: 1692052115}
   - {fileID: 1461461139}
   - {fileID: 364456387}
